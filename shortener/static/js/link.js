@@ -1,21 +1,3 @@
-# shortener
-
-``` html
-<!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <input class="deeplink__input" type="hidden" value="https://www.wildberries.ru/catalog/139314286/detail.aspx?targetUrl=MI">
-        <script type="text/javascript" src="/js/link.js"></script>
-    </body>
-</html>
-```
-
-``` js
 const input = document.querySelector('.deeplink__input');
 const arrayInput = input.value.split('//')
 if(input.value !== '') {
@@ -26,6 +8,5 @@ if(input.value !== '') {
       window.location.href = linkMobile;
     } else {
       window.location.href = input.value;
-    }  
+    }
 }
-```
