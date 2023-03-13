@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import Url
 
 
+@csrf_exempt
 def main_view(request):
     link = None
     if request.method == 'POST':
