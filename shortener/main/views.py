@@ -6,12 +6,13 @@ from .models import Url
 
 @csrf_exempt
 def main_view(request):
+    # return render(request, 'index2.html')
     link = None
     if request.method == 'POST':
         url = request.POST.get('url')
         if url:
             link = Url.objects.create(href=url)
-    return render(request, 'index.html', context={'link': link})
+    return render(request, 'index2.html', context={'link': link})
 
 
 def link_view(request, link_id):

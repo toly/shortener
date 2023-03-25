@@ -1,0 +1,233 @@
+{% load static %}<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="вайлдберриз, wildberries, deeplink, диплинк, сслыка, диплинк, валберис"/>
+    <meta name="description"
+          content="Диплинк для валберис - бесплатный сервис для создания ссылки, которая ведет в приложение wildberries. Переходя по ссылке deeplink покупатель сразу попадает в приложение, а не в браузер, что потенциально увеличивает шансы на покупку товара на вайлдберриз, либо добавление в отложенные."/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Wildberiec - Интернет - магазин модной одежды и обуви</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/vnd.microsoft.icon">
+</head>
+<body>
+
+<div class="page">
+
+
+    <header class="header">
+        <div class="container header__container">
+            <nav class="header__nav">
+                <div class="header__logo">
+                    <a href="/" class="header__link-logo" style="color: white">
+                        wildberies.ru
+                    </a>
+                </div>
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#" data-link="#instruction" class="header__link">Как это работает?</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="#" data-link="#faq" class="header__link">Вопрос ответ</a>
+                    </li>
+                </ul>
+                <button class="header__burger">
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="container intro__container">
+                <div class="intro__wrapper">
+                    <div class="intro__row">
+
+                        <div class="intro__form">
+                            <h1 class="intro__title title">
+                                Диплинк для wildberries
+                            </h1>
+
+                            <form method="POST" class="form" action="">
+                                <label for="link" class="form__label">
+                                    <input type="text" class="form__input" id="link" name="url" autocomplete="off"
+                                           required>
+                                    <small class="hidden">
+                                        Ссылка введена не верно, проверьте правильность введенных данных!
+                                    </small>
+                                </label>
+                                <button type="submit" class="form__button">
+                                    Сгенерировать ссылку
+                                </button>
+                            </form>
+                            {% if link %}
+                                Ваша сгенерированная ссылка:
+                                https://wildberiec.ru{% url 'link' link.id %}
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="instruction" id="instruction">
+            <div class="container instruction__container">
+                <div class="instruction__content">
+                    <h2 class="instruction__title">Как создать диплинк <br> для вайлдберриз?</h2>
+                    <ul class="instruction__list">
+                        <li class="instruction__item">
+                            <div class="instruction__image-wrap">
+                                <img src="{% static 'img/1.svg' %}" alt="icon">
+                            </div>
+                            <p class="instruction__text">
+                                Скопируйте ссылку на ваш продукт в Wildberries
+                            </p>
+                            <span class="instruction__number instruction__number--one"></span>
+                        </li>
+                        <li class="instruction__item">
+                            <div class="instruction__image-wrap">
+                                <img src="{% static 'img/2.svg' %}" alt="icon">
+                            </div>
+                            <p class="instruction__text">
+                                Вставьте в поле ввода для генерации deeplink
+                            </p>
+                            <span class="instruction__number instruction__number--two"></span>
+                        </li>
+                        <li class="instruction__item">
+                            <div class="instruction__image-wrap">
+                                <img src="{% static 'img/3.svg' %}" alt="icon">
+                            </div>
+                            <p class="instruction__text">
+                                Нажмите на кнопку “Сгенерировать ссылку”
+                            </p>
+                            <span class="instruction__number instruction__number--three"></span>
+                        </li>
+                        <li class="instruction__item">
+                            <div class="instruction__image-wrap">
+                                <img src="{% static 'img/4.svg' %}" alt="icon">
+                            </div>
+                            <p class="instruction__text">
+                                Рекламируйте ссылку в YouTube, Директе, facebook
+                            </p>
+                            <span class="instruction__number instruction__number--foo"></span>
+                        </li>
+                    </ul>
+                    <div class="instruction__banner">
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="faq" id="faq">
+            <div class="container faq__container">
+                <h3 class="faq__title">
+                    Вопрос ответ
+                </h3>
+                <p class="faq__text">
+                    Здесь мы собрали для Вас вопросы, которые могут возникнуть при использовании диплинк ссылок нашего
+                    веб-сервиса
+                </p>
+                <ul class="faq__list">
+                    <li class="faq__item">
+                        <p class="faq__question">
+                            <span>?</span>
+                            Зачем нужно использовать Deeplink для Wildberries?
+                        </p>
+                        <div class="faq__answer">
+                            <p>
+                                Если настраивать рекламу с обычной ссылкой на карточку товара, то при переходе
+                                пользователя по такой ссылке он попадает в браузер, где ему нужно заново вводить логин и
+                                пароль, это не удобно и потенциальный клиент просто уйдет, а значит деньги на рекламу
+                                потрачены впустую. С ссылкой от deeplink-pro пользователя перенаправляет в приложение от
+                                Wildberris, где он уже спокойно может принять решение о покупке и воспользоваться своими
+                                накопленными скидками.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <p class="faq__question">
+                            <span>?</span>
+                            Может ли Facebook заблокировать такую рекламу?
+                        </p>
+                        <div class="faq__answer">
+                            <p>
+                                К сожалению, даже если ты не нарушал правил Facebook тебя все равно могут заблокировать,
+                                и на это может повлиять огромное количество разных факторов (никогда не настраивали
+                                рекламу, настраивали на серые тематики, арбитраж, аккаунт «новорег» и т.п.). Иногда
+                                блокируют даже обычные ссылки на карточку товара. Сервис не предоставляет 100% гарантии,
+                                и не несет ответственности за Ваши настроенные компании и блокировки. На данный момент
+                                нет статистики по блокировкам ссылки.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <p class="faq__question">
+                            <span>?</span>
+                            Deeplink для Wieldberries бесплатен?
+                        </p>
+                        <div class="faq__answer">
+                            <p>
+                                Сервис Deeplink-pro бесплатен и рассчитан на помощь в маркетинговых инструментах по
+                                настройке рекламы на карточку товара Wildberries. Создавался для личных нужд в
+                                продвижении.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <p class="faq__question">
+                            <span>?</span>
+                            Можно ли его использовать для рекламы в Google, Яндекс.Директ, ВК?
+                        </p>
+                        <div class="faq__answer">
+                            <p>
+                                Да, он подойдет для любой рекламной площадки, поможет Вам не потерять клиентов и не
+                                слить деньги на рекламу. Увеличит шансы попасть карточке в топ и увеличит продажи.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="faq__item">
+                        <p class="faq__question">
+                            <span>?</span>
+                            Подойдет ли он для мобильных устройств на IOS?
+                        </p>
+                        <div class="faq__answer">
+                            <p>
+                                На данный момент deeplink для мобильных устройств на IOS не требуется. Рекомендуется при
+                                настройке рекламы разделять устройства.
+                            </p>
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer__container">
+
+
+            <div class="footer__row">
+                <nav class="footer__nav">
+                    <div class="footer__logo">
+                        <a href="/" style="color: white">
+                            http://wildberiec.ru
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</div>
+<div class="loade__gif hidden">
+    <div class="loade__gif-wrapper">
+        <img src="./gif/loader.gif" alt>
+    </div>
+</div>
+
+{#    <script src="./js/"></script>#}
+<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
