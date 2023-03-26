@@ -18,3 +18,8 @@ def main_view(request):
 def link_view(request, link_id):
     url = Url.objects.get(id=link_id)
     return render(request, 'link.html', {'link': url})
+
+
+def history_view(request):
+    urls = Url.objects.all()
+    return render(request, 'history.html', {'urls': urls})

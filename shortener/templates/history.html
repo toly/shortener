@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>История</h1>
+{% for url in urls %}
+    <p>{{ url.id }}. {{ url.href }}</p>
+{% endfor %}
+</body>
+</html>
